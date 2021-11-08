@@ -38,6 +38,7 @@ class JeYApplication : Application() {
         printWriter.close()
 
         return stacktraceAsString
+        //가나다라마바사
     }
 
     internal inner class UncaughtExceptionHandlerApplication : Thread.UncaughtExceptionHandler {
