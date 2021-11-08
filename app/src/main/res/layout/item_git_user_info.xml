@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+        <variable
+            name="user"
+            type="com.gooseok.sample.network.GitUserInfo" />
+<!--        <import type="java.lang.String" />-->
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="8dp"
+        android:onClick="@{clickListener}">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{user.userId, default = defaults}"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            tools:text="UserId" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:textSize="14sp"
+                android:text="@{'('+String.valueOf(user.idx)+')'}"
+                tools:text="idx"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text='@{(user.userName ?? "UserName")+" ( Following : "+String.valueOf(user.following)+", Followers : "+String.valueOf(user.followers)+" )"}'
+            android:layout_marginTop="4dp"
+            android:textSize="14sp"
+            android:textStyle="normal"
+            tools:text="UserName" />
+
+    </LinearLayout>
+</layout>
