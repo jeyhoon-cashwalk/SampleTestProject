@@ -32,6 +32,10 @@ class MainActivity : AppCompatActivity()
 
 //        viewModel = ViewModelProvider(this).get(GitUserInfoViewModel::class.java)
 
+        /*
+        이곳이 바로 메인 맥티비티 입니다!!!!
+         */
+
         /**
          * @MARK MVVM 세팅
          */
